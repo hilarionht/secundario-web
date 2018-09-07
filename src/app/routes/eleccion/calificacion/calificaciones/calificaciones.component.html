@@ -1,14 +1,108 @@
 <div class="content-heading">
-    <div>RESULTADOS: <small>categoria de calificaciones</small></div>
+    <div>REINAS: <small>ordenado segun puntacion</small></div>
 </div>
-<div class="card-columns">
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-responsive" id="table-ext-1">
+        <thead>
+            <tr>
+                <th>Orden</th>
+                <th>Numero</th>
+                <th>foto</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let candidata of reinas; let i = index ">
+                <td>{{ i + 1 }}</td>
+                <td>{{ candidata.numero }}</td>
+                <td>
+                    <div class="media">
+                        <img class="img-fluid circle" [src]="candidata.foto | imagen:'candidata'" alt="Image" />
+                    </div>
+                </td>
+                <td>{{ candidata.apellido }}</td>
+                <td>{{ candidata.nombre }}</td>
+                <td>{{ candidata.puntos }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="content-heading">
+    <div>MIS SIMPATIA: <small>ordenado segun puntacion</small></div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-responsive" id="table-ext-1">
+        <thead>
+            <tr>
+                <th>Orden</th>
+                <th>Numero</th>
+                <th>foto</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let candidata of simpatias; let i = index ">
+                <td>{{ i + 1 }}</td>
+                <td>{{ candidata.numero }}</td>
+                <td>
+                    <div class="media">
+                        <img class="img-fluid circle" [src]="candidata.foto | imagen:'candidata'" alt="Image" />
+                    </div>
+                </td>
+                <td>{{ candidata.apellido }}</td>
+                <td>{{ candidata.nombre }}</td>
+                <td>{{ candidata.puntos }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="content-heading">
+    <div>ELEGANCIA: <small>ordenado segun puntacion</small></div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-responsive" id="table-ext-1">
+        <thead>
+            <tr>
+                <th>Orden</th>
+                <th>Numero</th>
+                <th>foto</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let candidata of elegancia; let i = index ">
+                <td>{{ i + 1 }}</td>
+                <td>{{ candidata.numero }}</td>
+                <td>
+                    <div class="media">
+                        <img class="img-fluid circle" [src]="candidata.foto | imagen:'candidata'" alt="Image" />
+                    </div>
+                </td>
+                <td>{{ candidata.apellido }}</td>
+                <td>{{ candidata.nombre }}</td>
+                <td>{{ candidata.puntos }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- <div class="card-columns">
     <div class="card card-default text-center" style="width: 18rem;" *ngFor="let candidata of calificaiones">
         <img class="card-img-top img-circle img-fluid pointer w250" [src]="candidata.foto | imagen:'candidata'" alt="Card image">
 
         <div class="card-body">
             <h4 class="card-title">{{ candidata.categoria }} </h4>
-            <h4 class="card-title text-uppercase">{{ candidata.nombre}}</h4>
+            <h4 class="card-title text-uppercase">{{ candidata.nombre}} {{ candidata.apellido}}</h4>
             <p class="card-text">PUNTOS: {{ candidata.puntos }}</p>
         </div>
     </div>
-</div>
+</div> -->
