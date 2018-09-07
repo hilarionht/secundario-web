@@ -12,7 +12,8 @@ export class Candidata{
         public foto?: string,
         public estado?: boolean,
         public id?: string,
-        public descripcion?:string
+        public descripcion?:string,
+        public permite?:boolean
     ) {
 
     }

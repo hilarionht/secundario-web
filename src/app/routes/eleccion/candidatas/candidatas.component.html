@@ -4,16 +4,16 @@
 
 <button [routerLink]="['/eleccion/candidata','0']" class="btn btn-outline-primary" type="button" name="nuevo">nuevo</button>
 <div class="card-columns">
-    <div class="card card-default" style="width: 18rem;" *ngFor="let candidata of candidatas">
-        <img (click)="cambiarFoto(candidata.id)" class="card-img-top img-circle img-fluid pointer" src="assets/img/user/05.jpg" alt="Card image">
+    <div class="card card-default text-center" style="width: 18rem;" *ngFor="let candidata of candidatas">
+        <img class="card-img-top img-circle img-fluid pointer w250" [src]="candidata.foto | imagen:'candidata'" alt="Card image">
         <!-- <img [src]="candidata.foto | imagen:'candidata'" class="img-circle img-fluid pointer"> -->
         <!-- <img (click)="cambiarFoto()" [src]="usuario.img | imagen:'medico'" class="img-circle img-fluid pointer"> -->
         <div class="card-body">
             <h4 class="card-title">{{ 'Nº: ' + candidata.numero }} </h4>
             <h4 class="card-title">{{ candidata.apellido +' '+ candidata.nombre}}</h4>
             <p class="card-text">CURSO: {{ candidata.curso }} DIVISION: {{candidata.division }} TURNO: {{ candidata.turno }}</p>
-            <button [routerLink]="['/eleccion/calificacion', candidata.id ]" class="btn btn-outline-success btn-block" type="button" name="calificar" [disabled]="!candidata.estado">Calificar</button>
-            <!-- <button [routerLink]="['/eleccion/candidata', candidata.id ]" class="btn btn-outline-primary btn-block" type="button" name="calificar">Cambiar Imagen</button> -->
+            <button (click)="calificar( candidata.id )" class="btn btn-outline-success btn-block" type="button" name="calificar">Calificar</button>
+            <!-- [routerLink]="['/eleccion/calificacion', candidata.id ]" <button [routerLink]="['/eleccion/candidata', candidata.id ]" class="btn btn-outline-primary btn-block" type="button" name="calificar">Cambiar Imagen</button> -->
         </div>
     </div>
 </div>

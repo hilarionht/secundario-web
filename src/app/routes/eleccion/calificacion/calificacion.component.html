@@ -1,11 +1,16 @@
+<div class="card-footer text-muted">
+    <button [routerLink]="['/eleccion/candidatas']" class="btn btn-danger" type="button">Cancelar</button>
+</div>
 <div class="card text-center">
     <div class="card-header">
         <h3> {{ candidata.nombre + ' '+ candidata.apellido }} </h3>
     </div>
-    <div class="card-body animated fadeIn fast">
-        <form #calForm="ngForm" (ngSubmit)="save(calForm)">
-            <img class="img-fluid img-thumbnail center" style="width: 18rem;" src="assets/img/user/05.jpg" alt="Card image">
 
+    <div class="card-body animated fadeIn fast">
+
+        <form #calForm="ngForm" (ngSubmit)="save(calForm)">
+            <img class="img-fluid img-thumbnail center w250" style="width: 18rem;" [src]="candidata.foto | imagen:'candidata'" alt="Card image">
+            <!-- <img class="card-img-top img-circle img-fluid pointer" [src]="candidata.foto | imagen:'candidata'" alt="Card image"> -->
             <h5 class="card-title">NUMERO: {{candidata.numero }}</h5>
             <p class="card-text">{{ candidata.descripcion }}</p>
             <div class="input-group mb-3">
@@ -62,7 +67,5 @@
             <button class="btn btn-primary" type="submit">Calificar</button>
         </form>
     </div>
-    <div class="card-footer text-muted">
-        <button [routerLink]="['/eleccion/candidatas']" class="btn btn-danger" type="button">Cancelar</button>
-    </div>
+
 </div>

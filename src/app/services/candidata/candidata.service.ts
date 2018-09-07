@@ -71,6 +71,11 @@ export class CandidataService {
                   return true;
                 });
   }
+  isRated(id:string, ussId:string){
+    let url = URL_SERVICIOS + '/calificacion/isJuryRated/?idUsuario= '+ ussId + '&idCandidata=' + id ;
+    return this.http.get( url, { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`)} );
+  
+  }
   list( desde: number = 0 ) {
     let url = URL_SERVICIOS + '/candidata';//?desde=' + desde;
     return this.http.get( url, { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`)} );

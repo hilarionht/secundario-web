@@ -8,10 +8,10 @@ export class ImagenPipe implements PipeTransform {
 
   transform( img: string, tipo: string = 'usuario'): any {
 
-    let url = URL_SERVICIOS + '/uploads';
+    let url = URL_SERVICIOS ;
 
     if ( !img ) {
-      return url + '/usuarios/xxx';
+      return url + '/candidata/downloadImage/no-img.jpg';
     }
 
     if ( img.indexOf('https') >= 0 ) {
@@ -25,7 +25,7 @@ export class ImagenPipe implements PipeTransform {
       break;
 
       case 'candidata':
-        url += '/candidata/' + img;
+        url += '/candidata/downloadImage/' + img;
       break;
 
       case 'jurado':
@@ -34,7 +34,7 @@ export class ImagenPipe implements PipeTransform {
 
       default:
         console.log('tipo de imagen no existe, usuario, candidata, jurado');
-        url += '/usurios/xxx';
+        url += 'no-img.jpg';
     }
 
     return url;
