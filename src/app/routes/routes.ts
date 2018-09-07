@@ -16,7 +16,7 @@ export const routes = [
         path: '',
         component: LayoutComponent, CanActivateChild:[LoginGuard],
         children: [
-            { path: '', redirectTo: 'home', pathMatch: 'full' ,CanActivate:[LoginGuard]},
+            { path: '', redirectTo: 'eleccion', pathMatch: 'full' ,CanActivate:[LoginGuard]},
             { path: 'home', loadChildren: './home/home.module#HomeModule' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },

@@ -13,7 +13,7 @@ import { CandidatasComponent } from './candidatas/candidatas.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'eleccion' },
+  { path: '', redirectTo: 'candidatas' },
   { path: 'calificacion/:id', component: CalificacionComponent },
   { path: 'criterio/:id', component: CriterioComponent },
   { path: 'criterios', component: CriterioComponent },
