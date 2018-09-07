@@ -1,0 +1,99 @@
+<div class="content-heading">
+    <div>Canditas: <small>Crea, Modifica sus datos y da de baja a una candidata</small></div>
+</div>
+<form #cndForm="ngForm" (ngSubmit)="save(cndForm)">
+    <div class="row animated fadeIn fast">
+        <div class="col-md-6">
+            <!-- START card-->
+            <input type="hidden" name="estado" #name="ngModel" [(ngModel)]="candidata.estado">
+            <input type="hidden" name="id" #name="ngModel" [(ngModel)]="candidata.id">
+            <div class="card card-default">
+                <div class="card-header">Datos del Participante</div>
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">Nombre</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="Nombre completo" name="nombre" #name="ngModel" [(ngModel)]="candidata.nombre" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">Apellido</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="Apellido" name="apellido" #name="ngModel" [(ngModel)]="candidata.apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">DNI</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="DNI" name="dni" #name="ngModel" [(ngModel)]="candidata.dni" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">Fecha de Nacimiento</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="fecha de nacimiento" name="fechanacimiento" #name="ngModel" [(ngModel)]="candidata.fecha_nacimiento" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">Número</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="Núùmero" name="numero" #name="ngModel" [(ngModel)]="candidata.numero" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END card-->
+        </div>
+        <div class="col-md-6">
+            <!-- START card -->
+            <div class="card card-default">
+                <div class="card-header">Informacion adicional</div>
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Turno</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="turno" name="turno" #name="ngModel" [(ngModel)]="candidata.turno" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Curso</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="curso" name="curso" #name="ngModel" [(ngModel)]="candidata.curso" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Division</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="division" name="division" #name="ngModel" [(ngModel)]="candidata.division" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Descripcion</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" name="descripcion" #name="ngModel" [(ngModel)]="candidata.descripcion">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Descripcion</label>
+                        <div class="col-xl-10">
+                            <input type="file" (change)="onFileSeelected($event)">
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="form-group row">
+                        <label class="col-xl-9 col-form-label"></label>
+                        <div class="col-xl-3">
+                            <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- </form> END card-->
+        </div>
+
+    </div>
+
+</form>

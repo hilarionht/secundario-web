@@ -1,0 +1,51 @@
+<div class="content-heading">
+    <div>Gestion de Empleados
+        <small>Ingrese datos del empleado por nombre o codigo</small>
+    </div>
+</div>
+<!-- START card-->
+<div class="card card-default">
+    <div class="card-header">Parametros de Busqueda</div>
+    <div class="card-body">
+        <form class="form-inline">
+            <label class="sr-only" for="codigonombre">Name</label>
+            <input class="form-control mb-4 mr-sm-4" id="codigonombre" type="text" placeholder="Ingrese datos" />
+            <button class="btn btn-primary mb-4" type="submit">Buscar</button>
+        </form>
+    </div>
+</div>
+<!-- END card-->
+<!-- START row-->
+<div class="row">
+    <div class="col-md-6">
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">Resultados</div>
+            <div class="card-body">
+                <form role="form">
+                    <div class="card-header">
+                        <div class="card-title"></div>
+                    </div>
+                    <div class="card-body">
+                        <ngx-datatable class="bootstrap" [rows]="personasCols" [columns]="personasCols" [sortType]="'multi'" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50" [scrollbarV]="true">
+                        </ngx-datatable>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body">
+                <ngx-datatable #tableScroll class="bootstrap no-detail-row" [rows]="personasCols" columnMode="force" [headerHeight]="50" [footerHeight]="0" [rowHeight]="40" [scrollbarV]="true" [scrollbarH]="true">
+                    <ngx-datatable-column name="Codigo" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="Nombre"></ngx-datatable-column>
+                    <ngx-datatable-column name="direccion"></ngx-datatable-column>
+                    <ngx-datatable-column name="telefono" [width]="300"></ngx-datatable-column>
+                    <ngx-datatable-column name="email"></ngx-datatable-column>
+                </ngx-datatable>
+                <div class="spacing"></div>
+
+            </div>
+        </div>
+        <!-- END card-->
+    </div>
+
+</div>
+<!-- END row-->

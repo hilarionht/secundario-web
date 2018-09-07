@@ -1,0 +1,162 @@
+<div class="content-heading">
+    <div>Usuario:
+        <small>{{accion}} de Usuario</small></div>
+</div>
+<!-- <div class="card">
+    <div class="card-header">
+        Alta de Usuario
+    </div>
+    <div class="card-body">
+
+        <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="usuario._id">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault01">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" #name="ngModel" [(ngModel)]="usuario.nombre" placeholder="Nombre Completo" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault02">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" #name="ngModel" [(ngModel)]="usuario.apellido" placeholder="Apellido" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefaultUsername">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend2"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="username" #name="ngModel" [(ngModel)]="usuario.username" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault03">Password</label>
+                    <input type="text" class="form-control" name="password" #name="ngModel" [(ngModel)]="usuario.password" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationDefault04">Estado</label>
+                    <input type="text" class="form-control" name="estado" #name="ngModel" [(ngModel)]="usuario.estado" placeholder="estado" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationDefault05">Rol</label>
+                    <input type="text" class="form-control" name="role" #name="ngModel" [(ngModel)]="usuario.role" placeholder="rol" required>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+
+
+    </div>
+</div>
+-->
+<div class="row">
+    <div class="col-md-6">
+        <!-- START card-->
+        <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+            <input type="hidden" name="id" #_id="ngModel" [(ngModel)]="usuario.id">
+            <div class="card card-default">
+                <div class="card-header">Horizontal form</div>
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Nombre</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="Nombre completo" name="nombre" #name="ngModel" [(ngModel)]="usuario.nombre" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Apellido</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="Apellido" name="apellido" #name="ngModel" [(ngModel)]="usuario.apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Usuario</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="usuario" name="username" #name="ngModel" [(ngModel)]="usuario.username" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Password</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="password" name="password" #name="ngModel" [(ngModel)]="usuario.password" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Rol</label>
+                        <div class="col-xl-10">
+                            <select class="custom-select custom-select-sm" name="rol" #name="ngModel" [(ngModel)]="usuario.rol">
+                                <option selected="">Seleccione Rol</option>
+                                <option value="1">USER_ROLE</option>
+                                <option value="2">ADMIN_ROLE</option>
+                                <option value="3">GERENTE_ROLE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Activo</label>
+                        <div class="col-xl-10">
+                            <div class="checkbox c-checkbox">
+                                <label>
+                                <input type="checkbox" checked="" name="estado" #name="ngModel" [(ngModel)]="usuario.estado"/>
+                                <span class="fa fa-check"></span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label"></label>
+                        <div class="col-xl-10">
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+        <!-- END card-->
+    </div>
+    <div class="col-md-6">
+        <div class="card card-default">
+
+            <!-- START card 
+            <form #userForm2="ngForm" (ngSubmit)="addUser(userForm2)">-->
+            <div class="image-cropper-container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <img-cropper #cropper [image]="data1" [settings]="cropperSettings" (onCrop)="cropped($event)"></img-cropper>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">Select an image file</div>
+                            <div class="card-body">
+                                <label for="image-input" class="file-upload">
+                                    <button class="btn btn-secondary btn-block">Upload Image</button>
+                                    <input id="image-input" type="file" (change)="fileChangeListener($event)">
+                                </label>
+                                <p class="pv">Crop type:</p>
+                                <div class="btn-group btn-group-justified mb">
+                                    <label class="btn btn-secondary" (click)="setRoundedMethod(false)" [class.active]="!cropperSettings.rounded">Square</label>
+                                    <label class="btn btn-secondary" (click)="setRoundedMethod(true)" [class.active]="cropperSettings.rounded">Circle</label>
+                                </div>
+                                <div class="result" *ngIf="data1.image">
+                                    <p class="pv">Cropped image</p>
+                                    <img class="img-fluid img-thumbnail" [class.rounded-circle]="cropperSettings.rounded" [src]="data1.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- </form> END card-->
+        </div>
+    </div>
+</div>

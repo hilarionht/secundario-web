@@ -1,0 +1,73 @@
+<div class="content-heading">
+    <div>criterio:
+        <small>Lista de criterios</small></div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card card-default">
+            <div class="card-header">Criterios</div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th> </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let criterio of criterios; let i = index ">
+                            <td>{{ criterio.id }}</td>
+                            <td>{{criterio.nombre}}</td>
+                            <td>{{criterio.descripcion}}</td>
+                            <td>
+                                <a (click)="edit(criterio)">
+                                    <i class="btn btn-sm btn-success">Editar</i>
+                                </a>
+                                <a (click)="remove(criterio.id, crtrForm)">
+                                    <i class="btn btn-sm btn-danger">Eliminar</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <!-- START card-->
+        <form #crtrForm="ngForm" (ngSubmit)="save(crtrForm)">
+            <input type="hidden" name="id" #id="ngModel" [(ngModel)]="criterio.id">
+            <div class="card card-default">
+                <div class="card-header">Criterio Form</div>
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">Nombre</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="Nombre" name="nombre" #name="ngModel" [(ngModel)]="criterio.nombre" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label">Descripcion</label>
+                        <div class="col-xl-9">
+                            <input class="form-control" type="text" placeholder="Descripcion" name="descripcion" #name="ngModel" [(ngModel)]="criterio.descripcion" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-form-label"></label>
+                        <div class="col-xl-9">
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <!-- END card-->
+    </div>
+
+</div>
