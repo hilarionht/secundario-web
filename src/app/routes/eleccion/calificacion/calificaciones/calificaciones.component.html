@@ -1,0 +1,14 @@
+<div class="content-heading">
+    <div>RESULTADOS: <small>categoria de calificaciones</small></div>
+</div>
+<div class="card-columns">
+    <div class="card card-default text-center" style="width: 18rem;" *ngFor="let candidata of calificaiones">
+        <img class="card-img-top img-circle img-fluid pointer w250" [src]="candidata.foto | imagen:'candidata'" alt="Card image">
+
+        <div class="card-body">
+            <h4 class="card-title">{{ candidata.categoria }} </h4>
+            <h4 class="card-title text-uppercase">{{ candidata.nombre}}</h4>
+            <p class="card-text">PUNTOS: {{ candidata.puntos }}</p>
+        </div>
+    </div>
+</div>

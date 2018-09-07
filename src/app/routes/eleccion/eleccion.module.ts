@@ -10,6 +10,7 @@ import { CalificacionComponent } from './calificacion/calificacion.component';
 import { SharedModule } from '../../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { CandidatasComponent } from './candidatas/candidatas.component';
+import { CalificacionesComponent } from './calificacion/calificaciones/calificaciones.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'calificacion/:id', component: CalificacionComponent },
   { path: 'criterio/:id', component: CriterioComponent },
   { path: 'criterios', component: CriterioComponent },
-  { path: 'calificaciones', component: CalificacionComponent },
+  { path: 'calificaciones', component: CalificacionesComponent },
   { path: 'candidatas', component: CandidatasComponent },
   { path: 'candidata/:id', component: CandidataComponent }
 ];
@@ -31,7 +32,7 @@ const routes: Routes = [
   declarations: [
     CandidataComponent, 
     CriterioComponent, 
-    CalificacionComponent, CandidatasComponent
+    CalificacionComponent, CandidatasComponent, CalificacionesComponent
   ]
 })
 export class EleccionModule { }

@@ -73,4 +73,8 @@ export class CalificacionService {
     let url = URL_SERVICIOS + '/calificacion';//?desde=' + desde;
     return this.http.get( url, { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`)} );
   }
+  result() {
+    let url = URL_SERVICIOS + '/premiacion/calculateScore';//?desde=' + desde;
+    return this.http.get( url, { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`)} );
+  }
 }
