@@ -6,6 +6,7 @@ import { CalificacionService } from './../../../services/calificacion/calificaci
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { CalificacionItem } from '../../../models/calificacionItem.model';
 
 @Component({
   selector: 'app-calificacion',
@@ -17,11 +18,8 @@ export class CalificacionComponent implements OnInit {
   id:string;
   calificacion: Calificacion;
   candidata:Candidata;
-  calificacionItem : Object = {
-    simpatia:  null,
-    elegancia: null,
-    belleza: null
-  }
+  calificacionItem : CalificacionItem;
+  
   constructor(
     public calificacionService: CalificacionService, 
     public candidataService: CandidataService,

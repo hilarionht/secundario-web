@@ -413,14 +413,17 @@ const Usuario = {
     text: 'Configuracion',
     link: '/config',
     icon: 'icon-grid',
+    role: [] = [1],
     submenu: [
         {
             text: 'Usuarios',
-            link: '/config/list'
+            link: '/config/list',
+            role: [] = [1]
         },
         {
             text: 'Roles',
-            link: '/config/roles'
+            link: '/config/roles',
+            role: [] = [1]
         }
     ]
 };
@@ -454,22 +457,26 @@ const Caja = {
         }
     ]
 };
-const Criterio = {
+const Eleccion = {
     text: 'Eleccion',
     link: '/eleccion',
     icon: 'icon-grid',
+    role: [] = [1,2],
     submenu: [
         {
             text: 'Criterios',
-            link: '/eleccion/criterios'
+            link: '/eleccion/criterios',
+            role: [] = [1,2]
         },
         {
             text: 'Candidatas',
-            link: '/eleccion/candidatas'
+            link: '/eleccion/candidatas',
+            role: [] = [1,2]
         },
         {
             text: 'Calificaciones',
-            link: '/eleccion/calificaciones'
+            link: '/eleccion/calificaciones',
+            role: [] = [1,2]
         }
     ]
 };
@@ -491,14 +498,15 @@ const Calificacion = {
     submenu: [
         {
             text: 'Calificaciones',
-            link: '/calificacion/calificaciones'
+            link: '/calificacion/calificaciones',
+            rol_id:'ADMIN_ROLE'
         }
     ]
 };
 export const menu = [
     // Calificacion,
     // Candidata,
-    Criterio,
+    Eleccion,
     Usuario
     // Monitor,
     // Caja,

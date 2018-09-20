@@ -133,11 +133,12 @@ export class UsuarioService {
     
     return this.http.put( url, usuario ,  { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`) } )
                 .map( (resp: any) => {
+                  console.log('update....', resp);
                   if ( usuario.id === this.usuario.id ) {
-                    let usuarioDB: Usuario = resp.usuario;
+                    let usuarioDB: Usuario = resp;
                     this.guardarStorage( usuarioDB.id, this.token, usuarioDB );
                   }
-                  console.log('update....', resp);
+                 
                   
                   this.toastr.success( this.usuario.nombre, 'Usuario Actualizado!',{ timeOut: 3000,positionClass: 'toast-top-right'});
                   return true;

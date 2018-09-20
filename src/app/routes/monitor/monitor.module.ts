@@ -28,7 +28,7 @@ const routes: Routes = [
         NgxDatatableModule
     ],
     declarations: [
- 
+ ClientesComponent,AgendaComponent
     ],
     exports: [
         RouterModule
