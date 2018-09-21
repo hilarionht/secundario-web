@@ -51,12 +51,7 @@
                 <div class="card-header">Informacion adicional</div>
                 <div class="card-body">
 
-                    <div class="form-group row">
-                        <label class="col-xl-2 col-form-label">Turno</label>
-                        <div class="col-xl-10">
-                            <input class="form-control" type="text" placeholder="turno" name="turno" #name="ngModel" [(ngModel)]="candidata.turno" required>
-                        </div>
-                    </div>
+
                     <div class="form-group row">
                         <label class="col-xl-2 col-form-label">Curso</label>
                         <div class="col-xl-10">
@@ -70,24 +65,31 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Turno</label>
+                        <div class="col-xl-10">
+                            <input class="form-control" type="text" placeholder="turno" name="turno" #name="ngModel" [(ngModel)]="candidata.turno" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-xl-2 col-form-label">Descripcion</label>
                         <div class="col-xl-10">
                             <input class="form-control" type="text" name="descripcion" #name="ngModel" [(ngModel)]="candidata.descripcion">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-xl-2 col-form-label">Foto</label>
-                        <div class="col-xl-10">
-                            <input type="file" (change)="onFileSeelected($event)">
-                        </div>
-                    </div>
-                    <!-- -->
-                    <div class="form-group row">
                         <label class="col-xl-9 col-form-label"></label>
                         <div class="col-xl-3">
                             <button class="btn btn-primary btn-block" type="submit">Guardar</button>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-xl-2 col-form-label">Foto</label>
+                        <div class="col-xl-10">
+                            <input type="file" (change)="onFileSeelected($event)"><span><button (click)="SubirImagen()" class="btn btn-sm btn-success"><i class="fa fa-save"></i></button></span>
+                        </div>
+                    </div>
+                    <!-- -->
+
 
                 </div>
             </div>

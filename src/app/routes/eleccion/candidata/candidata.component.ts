@@ -4,6 +4,7 @@ import { CandidataService } from "../../../services/candidata/candidata.service"
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
 import { ModalUploadService } from "../../../components/modal-upload/modal-upload.service";
+import { log } from 'util';
 
 @Component({
   selector: "app-candidata",
@@ -27,27 +28,15 @@ export class CandidataComponent implements OnInit {
       if (this.id !== "0") {
         this.candidataService
           .get(this.id)
-          .subscribe((candidata: any) => (this.candidata = candidata));
-      } else {
-        this.candidata = new Candidata(
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          true,
-          "0",
-          ""
-        );
+          .subscribe((candidata: any) => {this.candidata = candidata;
+            console.log(candidata);
+            
+          });
       }
     });
   }
   onFileSeelected(event) {
-    console.log(event);
+    // console.log(event);
     this.selectedFile = <File>event.target.files[0];
     // if (!event) {
     //   this.selectedFile = null;
@@ -70,31 +59,45 @@ export class CandidataComponent implements OnInit {
 
     // reader.onloadend = () => (this.imagenTemp = reader.result);
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.candidata = new Candidata(
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      true,
+      "0",
+      ""
+    );
+  }
   save(form?: NgForm) {
-    if (this.selectedFile == null) {
-      alert("carge una imagen");
-      return;
-    }
-    const fd = new FormData();
-    fd.append("foto", this.selectedFile);
+    // if (this.selectedFile == null) {
+    //   alert("carge una imagen");
+    //   return;
+    // }
+   
     if (form.value.id == "0") {
       this.candidataService.create(form.value).subscribe(res => {
         
         console.log("nuevo", res);
         this.id = res.id;
-        this.uploadImage(fd,res.id);
+       
         this.resetForm(form);
        
         //this.router.navigate(['/eleccion/candidatas']);
       });
     } else {
       this.candidataService.update(form.value).subscribe(res => {
-        this.uploadImage(fd);
         this.resetForm(form);
         //this.router.navigate(['/eleccion/candidatas']);
       });
     }
+    this.router.navigate(['/eleccion/lista']);
     // this.candidataService.uploadImage(this.id, fd).subscribe(
     //   resp => {
     //     console.log(resp);
@@ -107,10 +110,18 @@ export class CandidataComponent implements OnInit {
       form.reset();
     }
   }
+  SubirImagen(){
+    const fd = new FormData();
+    fd.append("foto", this.selectedFile);
+    console.log(fd,'data', this.selectedFile);
+    
+    this.uploadImage(fd,this.id);
+  }
   uploadImage(img: FormData,id?:string) {
+
     this.candidataService.uploadImage(id, img).subscribe(resp => {
-      console.log(resp);
-      this.router.navigate(['/eleccion/candidatas']);
+      console.log('upload services call', resp);
+      this.router.navigate(['/eleccion/lista']);
     });
   }
   cargarFoto() {

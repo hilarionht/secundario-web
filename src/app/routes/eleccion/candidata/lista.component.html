@@ -1,0 +1,39 @@
+<div class="content-heading">
+    <div>CANDIDATAS A ELECCION REINA: <small>lista de candidatas</small></div>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-responsive" id="table-ext-1">
+        <thead>
+            <tr>
+                <th>Orden</th>
+                <th>Numero</th>
+                <th>Perfil</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>
+                    <button [routerLink]="['/eleccion/candidata','0']" class="btn btn-sm btn-outline-primary" type="button" name="nuevo"><i class="fa fa-plus"></i></button>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let candidata of candidatas; let i = index ">
+                <td>{{ i + 1 }}</td>
+                <td>{{ candidata.numero }}</td>
+                <td>
+                    <div class="media">
+                        <img class="img-fluid circle" [src]="candidata.foto | imagen:'candidata'" alt="Image" />
+                    </div>
+                </td>
+                <td>{{ candidata.apellido }}</td>
+                <td>{{ candidata.nombre }}</td>
+
+                <td><button [routerLink]="['/eleccion/candidata', candidata.id ]" type="button" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>
+                    <button (click)="delete(candidata.id)" class="btn btn-sm btn-outline-danger" type="button" name="delete"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

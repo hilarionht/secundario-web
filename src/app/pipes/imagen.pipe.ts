@@ -11,7 +11,7 @@ export class ImagenPipe implements PipeTransform {
     let url = URL_SERVICIOS ;
 
     if ( !img ) {
-      return url + '/candidata/downloadImage/no-img.jpg';
+      return url + '/no-img.jpg';
     }
 
     if ( img.indexOf('https') >= 0 ) {

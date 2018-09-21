@@ -2,7 +2,7 @@
     <div>Canditas: <small>Seleccione una candidata para calificar</small></div>
 </div>
 
-<button [routerLink]="['/eleccion/candidata','0']" class="btn btn-outline-primary" type="button" name="nuevo">nuevo</button>
+
 <div class="card-columns">
     <div class="card card-default text-center" style="width: 18rem;" *ngFor="let candidata of candidatas">
         <img class="card-img-top img-circle img-fluid pointer w250" [src]="candidata.foto | imagen:'candidata'" alt="Card image">

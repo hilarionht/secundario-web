@@ -59,7 +59,7 @@ export class CandidataService {
     return this.http.delete( url ,  { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`) } )
                 .map( resp => {
                   this.toastr.success( 'El candidata a sido eliminado correctamente', 'candidata BORRADO!',{ timeOut: 3000,positionClass: 'toast-top-right'});
-                  return true;
+                  return {status: true,response: resp};
                 });
 
   }
@@ -68,7 +68,7 @@ export class CandidataService {
     let url = URL_SERVICIOS + '/candidata/uploadImage/' + id;
     return this.http.put( url, data ,  { headers:new HttpHeaders().append('Authorization', `Bearer ${  localStorage.getItem('token') }`) } )
                 .map( (resp: any) => {
-                  return true;
+                  return {status: true, response: resp};
                 });
   }
   isRated(id:string, ussId:string){

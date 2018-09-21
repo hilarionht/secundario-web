@@ -474,6 +474,11 @@ const Eleccion = {
             role: [] = [1,2]
         },
         {
+            text: 'Lista',
+            link: '/eleccion/lista',
+            role: [] = [1]
+        },
+        {
             text: 'Calificaciones',
             link: '/eleccion/calificaciones',
             role: [] = [1,2]
